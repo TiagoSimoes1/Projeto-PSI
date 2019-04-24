@@ -4,7 +4,7 @@ var Schema = mongoose.Schema;
 
 var Professor_ExameSchema = new Schema({
     professor: {type: Schema.Types.ObjectId, ref:'Professor', required = true},
-    disciplinas: [{type:Schema.Types.ObjectId, ref:'Disciplina'}]
+    disciplinas: [{type:Schema.Types.ObjectId, ref:'Disciplina', required = true}]
 });
 
 module.exports = mongoose.model('Professor_Exame', Professor_ExameSchema);

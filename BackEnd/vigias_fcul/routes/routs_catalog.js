@@ -8,7 +8,5 @@ var prof_controller = require('../controllers/professorController');
 var up_controller = require('../controllers/uploadFilesController');
 
 //--UPLOADFILES--//
-router.post('/newCalendar', up_controller.new_calendar_post);
-
 router.post('/newDI', up_controller.new_di_post);
 
