@@ -4,6 +4,7 @@ var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 
+//--connection database
 var mongoose = require('mongoose');
 var mongoDB = 'mongodb://psi008:psi008@localhost:27017/psi008?retryWrites=true&authSource=psi008';
 mongoose.connect(mongoDB, { useNewUrlParser: true });

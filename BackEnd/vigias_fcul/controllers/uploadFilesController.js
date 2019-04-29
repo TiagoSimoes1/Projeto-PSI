@@ -5,7 +5,7 @@ var store = multer.diskStorage({
         cb(null, '../uploads');
     },
     filename:function(req,file,cb){
-        cb(null, Date.now()+'.'+file.originalname);
+        cb(null, file.originalname);
     }
 });
 
@@ -32,3 +32,18 @@ exports.new_di_post = function(req,res){
     //gurdar na base de dados os models
 
 };
+
+exports.new_calendar_post = function(req,res) {
+    
+    upload(req,res,function(err){
+        if(err){
+            return res.status(501).json({error:err});
+        }
+       
+        res.json({originalname:req.file.originalname, uploadname:req.file.filename});
+    });
+    
+    //carregar ficheiro 
+    //gerar tudo a partir daqui
+    //gurdar na base de dados os models
+}
