@@ -10,8 +10,9 @@ var DisciplinaSchema = new Schema({
     nome: {type:String,required: true},
     turmas:{type:[String]},
     regente: {type: Schema.Types.ObjectId, ref:'Professor'},
-    professores: [{type: Schema.Types.ObjectId, ref:'Professor',required: true}],
-    professores_turmas: [{p:{type:Schema.Types.ObjectId, ref:'Professor'},t:[String]}]
+    professores: [{type: Schema.Types.ObjectId, ref:'Professor',required = true}],
+    professores_turmas: [{p:{type:Schema.Types.ObjectId, ref:'Professor'},t:[String]}],
+    ciclo: {type:Number, enum:[1,2], required = true}
 
 });
 
