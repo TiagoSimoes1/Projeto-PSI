@@ -12,8 +12,9 @@ var ExameSchema = new Schema({
     dia: {type:String, enum: ["Seg","Ter","Qua","Qui","Sex","Sab"], required = true},
     hInicio: {type:Date,required = true},
     hFim: {type:Date,required = true},
+    // acho que falta aqui uma duracao para quando lermos do ficheiro pormos logo aqui para nao termos de estar a saltar parametros que vêm do exel
     salas: {type:[String],required = true},
-    anoCurso: {type: Number, enum:[1,2,3]},
+    anoCurso: {type: Number, enum:[1,2,3]}, // temos de ter atencao aqui porque iremos buscar estes dois atributos numa so celula
     curso: {type:String, enum: ["EI","TI"]}
 
 });
