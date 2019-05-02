@@ -1,7 +1,7 @@
 var Professor_Exame = require('../models/professor_exame');
 var Professor = require('../models/professor');
 var Disciplina = require('../models/disciplina');
-var Exame = require('../models/Exame');
+var Exame = require('../models/exame');
 
 var arraySort = require('array-sort');
 

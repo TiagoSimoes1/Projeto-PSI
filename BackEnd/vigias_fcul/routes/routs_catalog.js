@@ -16,3 +16,6 @@ router.post('/cal', up_controller.new_calendar_post)
 router.get('/getCal/:ano/:sem/:sort', prof_exame_controller.calendar_get); //ano do tipo "2018/2019", sem = "1" ou "2", sort = "disc" ou "prof"
                                                                             
 router.get('/getProfVig/:prof',prof_exame_controller.getVigilancia);
+
+
+module.exports = router;

@@ -6,7 +6,9 @@ var logger = require('morgan');
 
 //--connection database
 var mongoose = require('mongoose');
-var mongoDB = 'mongodb://psi008:psi008@localhost:27017/psi008?retryWrites=true&authSource=psi008';
+
+var mongoDB = 'mongodb+srv://Nico:Wrestling_97@cluster0-afymq.azure.mongodb.net/test?retryWrites=true';
+//var mongoDB = 'mongodb://psi008:psi008@localhost:27017/psi008?retryWrites=true&authSource=psi008';
 mongoose.connect(mongoDB, { useNewUrlParser: true });
 var db = mongoose.connection;
 db.on('error', console.error.bind(console, 'MongoDB connection error:'));
