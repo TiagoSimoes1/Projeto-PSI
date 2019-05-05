@@ -92,7 +92,8 @@ exports.getVigilantes = function(req,res){ //preciso de saber o ano letivo,regen
     var nomeDisc = [String];
     var idDisc = [String];
     var cont = 0;
-    var exame;
+    var prof_index = [Number];
+    
 
     Disciplina.find({'regente':req.regente},function(r){
         r.forEach(function(line){
@@ -104,16 +105,30 @@ exports.getVigilantes = function(req,res){ //preciso de saber o ano letivo,regen
     idDisc.forEach(function(d){
         result_aux.nomeD = nomeDisc[cont];
         cont++;
-        Professor_Exame.find({'exames.disciplina': d },function(l){
+        Professor_Exame.find({},function(l){
             l.forEach(function(line){
-                exame = line.exames.filter(e => e.disciplina == d && e.anoletivo == req.anoletivo);
-                exame.forEach(function(e){
-                    
+                line.exames.forEach(function(exame){
+                    Exame.findById({exame},function(exameS){
+                         if (exameS.disciplina == d) {
+                             Professor.findById(function(p){
+                                
+                             });
+                         }
+                    });
                 });
+                
+                //exame = line.exames.filter(e => e.disciplina == d && e.anoletivo == req.anoletivo);
+                //exame.forEach(function(e){
+                    
+                //});
                
 
             });
             
+            prof_index.forEach(function(index){
+
+            });
+
         });
     });
   
